@@ -1,0 +1,26 @@
+#include <ESP8266WiFi.h>; 
+#include <WiFiClient.h>; 
+#include <ThingSpeak.h>; 
+const char* ssid = "OPPO A12"; 
+const char* password = "vishweshindia"; 
+int val; 
+int pin = A0; 
+WiFiClient client; 
+unsigned long myChannelNumber = 1922293; 
+const char * myWriteAPIKey = "1QR8E4M8B78L8O38";void setup() 
+{
+Serial.begin(9600); 
+delay(10); 
+WiFi.begin(ssid,password); 
+ThingSpeak.begin(client); 
+} 
+void loop() 
+{ 
+val = analogRead(pin)*0.322265; 
+Serial.print(" Temperature: "); 
+Serial.print(val); 
+Serial.println("*C"); 
+delay(1000); 
+ThingSpeak.writeField(myChannelNumber, 1,val, myWriteAPIKey); 
+delay(100); 
+}
