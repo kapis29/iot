@@ -1,0 +1,17 @@
+#define BLYNK_TEMPLATE_ID "TMPLWCVRk_mr" 
+#define BLYNK_DEVICE_NAME "Home Automation using IoT"
+#define BLYNK_AUTH_TOKEN "1rqBPPdqyGrofQ6tMSDqP-rrV0bVdjJ8" 
+#include <BlynkSimpleStream.h> 
+int input1 = 3, input2=13; 
+char auth[] = "1rqBPPdqyGrofQ6tMSDqP-rrV0bVdjJ8"; 
+void setup() 
+{ 
+pinMode(input1,OUTPUT); 
+pinMode(input2, OUTPUT); 
+Serial.begin(9600); 
+Blynk.begin(Serial, auth); 
+} 
+void loop()
+{ 
+Blynk.run(); 
+}
