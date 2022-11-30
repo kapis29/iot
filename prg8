@@ -1,0 +1,17 @@
+#define BLYNK_TEMPLATE_ID "TMPLN5XqQi-V" 
+#define BLYNK_DEVICE_NAME "DC motor IoT" 
+#define BLYNK_AUTH_TOKEN "PulW2Tj_cmU1YojhMazUgCdH4ubbV0ou" 
+#include <BlynkSimpleStream.h> 
+int input1 = 8, input2=9; 
+char auth[] = "PulW2Tj_cmU1YojhMazUgCdH4ubbV0ou"; 
+void setup() 
+{ 
+pinMode(input1,OUTPUT); 
+pinMode(input2, OUTPUT); 
+Serial.begin(9600); 
+Blynk.begin(Serial, auth); 
+} 
+void loop()
+{ 
+Blynk.run(); 
+}
